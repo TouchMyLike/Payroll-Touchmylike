@@ -10,7 +10,7 @@ import { AccountCircle, Lock } from '@mui/icons-material'
 import logo from '../../assets/images/logo.png'
 import { TLogo } from '../../styled/Logo'
 
-export default function Login() {
+export default function ChangePassword() {
     return (
         <Box sx={{
             marginTop: 8,
@@ -21,25 +21,6 @@ export default function Login() {
             <TLogo src={logo} width={150} height={150} />
             <Box component='form' noValidate>
 
-
-                <TextField
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="email"
-                    label="Email Address"
-                    name="email"
-                    autoComplete="email"
-                    autoFocus
-                    InputProps={{
-                        startAdornment: (
-                            <InputAdornment position="start">
-                                <AccountCircle />
-                            </InputAdornment>
-                        ),
-                    }}
-                    variant="filled"
-                />
 
                 <TextField
                     margin="normal"
@@ -60,9 +41,25 @@ export default function Login() {
                     variant="filled"
                 />
 
-                <Navigation to="/reset_password" style={{ color: '#FFF' }}>
-                    <Typography variant="body2" color='text.secondary'>Forgot Password?</Typography>
-                </Navigation>
+
+                <TextField
+                    margin="normal"
+                    required
+                    fullWidth
+                    name="password"
+                    label="Confirm Password"
+                    type="password"
+                    id="password"
+                    autoComplete="current-password"
+                    InputProps={{
+                        startAdornment: (
+                            <InputAdornment position="start">
+                                <Lock />
+                            </InputAdornment>
+                        ),
+                    }}
+                    variant="filled"
+                />
 
                 <Button
                     type="submit"
@@ -70,7 +67,7 @@ export default function Login() {
                     fullWidth
                     sx={{ mt: 3, mb: 2, backgroundColor: '#FFFFFF' }}
                 >
-                    Login
+                    Confirm to reset password
                 </Button>
             </Box>
         </Box>
