@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  Routes,
+  Route,
+} from "react-router-dom";
+import { Container } from '@mui/material'
+import Footer from './Components/Footer'
+import Login from './Components/Login'
+import ResetPassword from './Components/ResetPassword'
+import SendOTP from "./Components/SendOTP";
+import ChangePassword from "./Components/ChangePassword";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Container component='main'>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/reset_password" element={<ResetPassword />} />
+        <Route path="/send_otp" element={<SendOTP />} />
+        <Route path="/change_password" element={<ChangePassword />} />
+      </Routes>
+        <Footer />
+    </Container>
+  )
 }
 
-export default App;
+export default App
