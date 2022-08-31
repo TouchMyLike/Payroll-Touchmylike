@@ -5,8 +5,7 @@ import { TLogo } from '../../../styled/Logo'
 
 export function TForms(props: any) {
   //boolean props
-  const { showLogo, showTitle, showBtn } = props
-  const title = props.title || 'Title'
+  const { showLogo, showBtn } = props
   const btnTxt = props.btnTxt || 'Submit'
   const navigate = useNavigate()
   return (
@@ -19,9 +18,9 @@ export function TForms(props: any) {
       }}
     >
       {showLogo && <TLogo src={logo} width={150} height={150} />}
-      {showTitle && (
+      {props.title && (
         <Typography variant='h6' component='h1'>
-          {title}
+          {props.title}
         </Typography>
       )}
       <Box component='form' noValidate>
