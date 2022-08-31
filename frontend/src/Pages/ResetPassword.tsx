@@ -23,15 +23,5 @@ export default function ResetPassword() {
   )
   const navigate = useNavigate()
   const onBtnClick = () => navigate(`/send_otp`)
-  return (
-    <TForms
-      showLogo
-      title={'Reset Password'}
-      inputs={inputs}
-      link={link}
-      showBtn
-      btnTxt={'Forgot Password'}
-      onBtnClick={onBtnClick}
-    />
-  )
+  return <TForms showLogo inputs={inputs} link={link} showBtn btnTxt={'Forgot Password'} onBtnClick={onBtnClick} />
 }
