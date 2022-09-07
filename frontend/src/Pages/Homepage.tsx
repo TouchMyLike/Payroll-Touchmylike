@@ -1,6 +1,6 @@
 import { TForms } from '../Components/TML/TForm'
 import { AccountCircle, Lock } from '@mui/icons-material'
-import { Link as Navigation } from 'react-router-dom'
+import { Link as Navigation, useNavigate } from 'react-router-dom'
 import { Typography } from '@mui/material'
 
 export default function Homepage() {
@@ -34,5 +34,7 @@ export default function Homepage() {
       </Navigation>
     </>
   )
-  return <TForms showLogo showBtn inputs={inputs} btnTxt={'Login'} link={link} />
+  const navigate = useNavigate()
+  const onBtnClick = () => navigate(`/account`)
+  return <TForms showLogo showBtn inputs={inputs} btnTxt={'Login'} link={link} onBtnClick={onBtnClick} />
 }

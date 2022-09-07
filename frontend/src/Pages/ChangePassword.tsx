@@ -1,4 +1,5 @@
 import { TForms } from '../Components/TML/TForm'
+import { useNavigate } from 'react-router-dom'
 import { Lock } from '@mui/icons-material'
 
 export default function ChangePassword() {
@@ -24,5 +25,7 @@ export default function ChangePassword() {
     },
   ]
 
-  return <TForms showLogo showBtn inputs={inputs} btnTxt={'Confirm to reset password'} />
+  const navigate = useNavigate()
+  const onBtnClick = () => navigate(`/`)
+  return <TForms showLogo showBtn inputs={inputs} btnTxt={'Confirm to reset password'} onBtnClick={onBtnClick} />
 }
