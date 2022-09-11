@@ -11,7 +11,7 @@ export default function ChangePassword() {
       autoComplete: 'current-password',
       autoFocus: true,
       position: 'start',
-      icon: <Lock />,
+      icon: <Lock />
     },
     {
       id: 'Cpassword',
@@ -20,8 +20,8 @@ export default function ChangePassword() {
       name: 'Cpassword',
       autoComplete: 'current-password',
       position: 'start',
-      icon: <Lock />,
-    },
+      icon: <Lock />
+    }
   ]
 
   return <TForms showLogo showBtn inputs={inputs} btnTxt={'Confirm to reset password'} />

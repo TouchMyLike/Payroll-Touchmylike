@@ -8,8 +8,8 @@ export default function ResetPassword() {
       id: 'empId',
       label: 'Employee ID',
       name: 'empId',
-      autoFocus: true,
-    },
+      autoFocus: true
+    }
   ]
 
   const link = (

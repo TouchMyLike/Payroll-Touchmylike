@@ -2,7 +2,7 @@ import { TForms } from '../Components/TML/TForm'
 import { Link as Navigation } from 'react-router-dom'
 import { Typography } from '@mui/material'
 
-export default function ResetPassword() {
+export default function SendOTP() {
   const inputsBtn = [
     {
       navigateTo: '/change_password',
