@@ -14,7 +14,7 @@ export function TForms(props: any) {
         marginTop: 8,
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
+        alignItems: 'center'
       }}
     >
       {showLogo && <TLogo src={logo} width={150} height={150} />}
@@ -38,7 +38,7 @@ export function TForms(props: any) {
               autoComplete={element.autoComplete}
               autoFocus={element.autoFocus}
               InputProps={{
-                startAdornment: <InputAdornment position={element.position || 'start'}>{element.icon}</InputAdornment>,
+                startAdornment: <InputAdornment position={element.position || 'start'}>{element.icon}</InputAdornment>
               }}
               variant='filled'
             />
@@ -58,13 +58,7 @@ export function TForms(props: any) {
           ))}
         {props.link && props.link}
         {showBtn && (
-          <Button
-            type='submit'
-            variant='contained'
-            fullWidth
-            sx={{ mt: 3, mb: 2, backgroundColor: '#FFFFFF' }}
-            onClick={props.onBtnClick}
-          >
+          <Button type='submit' variant='contained' fullWidth sx={{ mt: 3, mb: 2, backgroundColor: '#FFFFFF' }} onClick={props.onBtnClick}>
             {btnTxt}
           </Button>
         )}
@@ -72,3 +66,7 @@ export function TForms(props: any) {
     </Box>
   )
 }
+
+import TFormTest from './TFormTest'
+
+export { TFormTest }

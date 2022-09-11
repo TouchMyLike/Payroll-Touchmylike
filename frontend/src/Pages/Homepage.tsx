@@ -12,7 +12,7 @@ export default function Homepage() {
       autoComplete: 'email',
       autoFocus: true,
       position: 'start',
-      icon: <AccountCircle />,
+      icon: <AccountCircle />
     },
     {
       id: 'password',
@@ -21,8 +21,8 @@ export default function Homepage() {
       name: 'password',
       autoComplete: 'current-password',
       position: 'start',
-      icon: <Lock />,
-    },
+      icon: <Lock />
+    }
   ]
 
   const link = (
@@ -35,4 +35,8 @@ export default function Homepage() {
     </>
   )
   return <TForms showLogo showBtn inputs={inputs} btnTxt={'Login'} link={link} />
+
+  // <TForms>
+  //   ddddd
+  // </TForms>
 }
