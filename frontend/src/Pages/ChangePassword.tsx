@@ -1,4 +1,4 @@
-import { TForms } from '../Components/TML/TForm'
+import { TForms } from '../components/TML/TForm'
 import { useNavigate } from 'react-router-dom'
 import { Lock } from '@mui/icons-material'
 

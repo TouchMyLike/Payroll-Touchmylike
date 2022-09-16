@@ -1,84 +1,139 @@
-import { Box, Typography, Grid, Paper, Stack } from '@mui/material'
-import avatar from '../assets/images/logo.png'
-import { TLogo } from '../styled/Logo'
+import {
+  Avatar,
+  Box,
+  Chip,
+  Container,
+  Grid,
+  Stack,
+  Typography,
+} from "@mui/material";
+import { Verified, VisibilityOff } from "@mui/icons-material";
+import logo from "../assets/images/user.png";
+import { TLogo } from "../styled/Logo";
 
-export default () => {
+export default function Account() {
+  const box = [
+    {
+      name: "Calendar",
+      navigateTo: "",
+      icon: "",
+    },
+    {
+      name: "Account",
+      navigateTo: "",
+      icon: "",
+    },
+    {
+      name: "Manage Employee",
+      navigateTo: "",
+      icon: "",
+    },
+    {
+      name: "Add your menu",
+      navigateTo: "",
+      icon: "",
+    },
+  ];
   return (
-    <Stack
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        marginTop: 8,
-      }}
-    >
-      <Typography variant='h4' component='h1'>
-        Choose your problem - face it
+    <Grid>
+      <Typography variant="h3" align="center">
+      Choose your problem - face it
       </Typography>
-      <Paper
-        elevation={12}
-        sx={{
-          color: '#000',
-          backgroundColor: '#FFF',
-          marginTop: 3,
-        }}
-      >
-        <Grid container p={3} spacing={2}>
-          {/* Container */}
-          <Grid item md={8}>
-            <Grid item container spacing={2}>
-              <Grid item>
-                <Typography variant='body2' component='h1'>
-                  TML-Admin404
-                </Typography>
-              </Grid>
-              <Grid item>
-                <Typography variant='body2' component='h1'>
-                  Verified
-                </Typography>
-              </Grid>
-            </Grid>
+      <Grid container sx={{ display: "flex", justifyContent: "center" }} item>
+        <Box
+          sx={{
+            color: "#000",
+            padding: "1rem",
+            borderRadius: "10px",
+            boxShadow: 3,
+            marginTop: 8,
+          }}
+        >
+          <Grid container spacing={5}>
             <Grid item>
-              <Typography variant='body2' component='h1'>
-                id: tml379***006
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Grid item container spacing={4}>
-                <Grid item>
-                  <Typography variant='body2' component='h1'>
-                    Regular
+              <Stack direction="row" spacing={2}>
+                <Box>
+                  <Typography variant="body2" paragraph>
+                    TML-Admin404
                   </Typography>
-                </Grid>
-                <Grid item>
-                  <Typography variant='body2' component='h1'>
-                    use TML to get discount
-                  </Typography>
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
-          <Grid item md={4}>
-            <Box
-              sx={{
-                display: 'flex',
-                height: '120px',
-                width: '120px',
-              }}
-            >
-              <TLogo
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  marginBottom: 0,
+                </Box>
+                <Box>
+                  <Chip
+                    icon={<Verified>M</Verified>}
+                    label="Verified"
+                    color="primary"
+                  />
+                </Box>
+              </Stack>
+              <Stack>
+                <Typography variant="caption">
+                  id: tml379***006 <VisibilityOff />
+                </Typography>
+              </Stack>
+              <Box
+                sx={{
+                  backgroundColor: "#D9D9D9",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  borderRadius: "20px",
+                  p: 1,
                 }}
-                src={avatar}
-              />
-            </Box>
+              >
+                <Box>
+                  <Typography variant="caption">Regular</Typography>
+                </Box>
+                <Box>
+                  <Typography variant="caption">
+                    use tml coin to discount
+                  </Typography>
+                </Box>
+              </Box>
+            </Grid>
+            <Grid item>
+              <TLogo src={logo} width="150" height="150" />
+            </Grid>
           </Grid>
-        </Grid>
-      </Paper>
-      
-    </Stack>
-  )
+        </Box>
+      </Grid>
+      <Grid item>
+        <Container maxWidth="sm">
+          <Grid
+            container
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              marginTop: 4,
+            }}
+            spacing={4}
+          >
+            {box.map((card: any) => (
+              <Grid md={5} item key={card}>
+                <Box
+                  sx={{
+                    color: "#000",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    flexDirection: "column",
+                    borderRadius: "10px",
+                    boxShadow: 3,
+                    p: 2,
+                  }}
+                >
+                  <Avatar sx={{ bgcolor: "red" }} aria-label="recipe">
+                    Icon
+                  </Avatar>
+
+                  <Typography gutterBottom variant="h5" component="h2">
+                    {card.name}
+                  </Typography>
+                </Box>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Grid>
+    </Grid>
+  );
 }

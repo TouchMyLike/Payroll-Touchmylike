@@ -1,4 +1,4 @@
-import { TForms } from '../Components/TML/TForm'
+import { TForms } from '../components/TML/TForm'
 import { Link as Navigation } from 'react-router-dom'
 import { Typography } from '@mui/material'
 

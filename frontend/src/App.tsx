@@ -1,11 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import { Container } from '@mui/material'
-// import ResetPassword from './Components/ResetPassword'
-// import SendOTP from './Components/SendOTP'
-// import ChangePassword from './Components/ChangePassword'
-import Footer from './Components/Footer'
-import { Homepage, ResetPassword, SendOTP, ChangePassword } from './Pages'
-import Account from './Pages/Account'
+import Footer from './components/Footer'
+import { Account, Homepage, ResetPassword, SendOTP, ChangePassword } from './pages'
 
 function App() {
   return (
